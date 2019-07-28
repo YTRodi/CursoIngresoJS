@@ -3,6 +3,7 @@ function mostrar()
 	var numero;
 
 	numero=prompt("Ingresar numero entre 0 y 9");
+	numero=parseInt(numero);
 	
 	while(isNaN(numero)/*si no es NUMBER da NaN*/ || numero<=0 || numero>=10/*ASI INCLUYE EL 9*/)
 	{
