@@ -2,9 +2,42 @@ function mostrar()
 {	//FUNCIONA
 	var contador=0;
 	var acumulador=0;
-	var respuesta='si';
+	var respuesta;
 	
-	while(respuesta == 'si')//si el numero que ingresamos es verdadero se ejecuta esto.
+	do //en la primera iteracion siempre se ejecute y va a entrar el prompt pidiendo un numero;
+	{
+		numero = prompt("ingrese un numero:");
+		while(isNaN(numero))
+		{
+			numero = prompt("Ingrese un numero:")
+		}
+
+		numero = parseInt(numero);
+		acumulador = acumulador + numero;
+		contador++; //contador = contador +1 ;
+
+		respuesta = prompt("desea seguir? si/no");
+
+		while(respuesta != "si" || respuesta != "no") //respuesta != "si"(FALSO) // respuesta != "no"(VERDADERO)- TABLA DE VERDAD ||: Con un solo verdadero ya es todo verdadero.
+		{
+			respuesta = prompt("ERROR, ingrese si o no");
+		}
+	}
+	while(respuesta == "si")
+	{
+
+	}
+
+	
+
+
+document.getElementById('suma').value=acumulador;
+document.getElementById('promedio').value=acumulador/contador;
+
+}//FIN DE LA FUNCIÓN
+/*
+---------------------------------------------------------------------------------------
+while(respuesta == 'si')//si el numero que ingresamos es verdadero se ejecuta esto.
 	{
 		numero=prompt("Ingrese numero");
 		numero=parseInt(numero);
@@ -22,11 +55,8 @@ function mostrar()
 		respuesta=prompt("ingrese si para agregar otro numero"); // si pongo otra cosa que si, termina la funcion.
 	}
 
+*/
 
-document.getElementById('suma').value=acumulador;
-document.getElementById('promedio').value=acumulador/contador;
-
-}//FIN DE LA FUNCIÓN
 /*
 -----------------------------------------------------------------------------------------------------------
 //FUNCIONA!

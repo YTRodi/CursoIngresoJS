@@ -4,12 +4,18 @@ function mostrar()
 	var contador=0;
 	var acumulador=0;
 	var numero;
+	// inicializacion; condicion; incremento/decremento;      //i = contador;
+	for(var i=0; i <5; i++)
+	{
+		numero=prompt("Ingrese un numero");
+		numero=parseInt(numero);
+		acumulador = acumulador + numero; //acumulador+=numero
+	}
 
 	while(contador<5)
 	{
-		numero=prompt("Ingrese numero");
+		numero=prompt("Ingrese un numero");
 		numero=parseInt(numero);
-
 		contador = contador + 1; //es un metodo de break, para terminar de ejecutar una variable(aparte que suma de a 1).
 		acumulador = acumulador + numero;
 	}
@@ -17,7 +23,7 @@ function mostrar()
 
 
 document.getElementById('suma').value=acumulador;
-document.getElementById('promedio').value=acumulador/5;
+document.getElementById('promedio').value=acumulador;
 
 }//FIN DE LA FUNCIÓN
 

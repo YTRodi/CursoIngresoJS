@@ -1,5 +1,149 @@
 function mostrar()
-{	//FUNCIONA PERO NO TERMINO DE ENTENDERLO!!!
+{
+	var respuesta='si';
+	var numero;
+	var maximo;
+	var minimo;
+	var esPrimeraIteracion = true;
+
+	do
+	{
+		numero = prompt("ingrese un numero");
+		numero = prompt(numero);
+
+		//VALIDAR UN NUMERO Y RANGO!!! 
+		while(isNaN(numero) || numero < -10 || numero > 10) // si el IsNan(numero) es una letra es VERDADERO y entra al bucle while (ERROR. Debe ingresar un numero entre -10 y 10.)
+		{
+			numero = prompt("ERROR. Debe ingresar un numero entre -10 y 10");
+			numero = parseInt(numero); 
+		}
+
+		if(esPrimeraIteracion === true)
+		{
+			maximo = numero; //la primera vez es el maximo y el minimo. (porque es el unico numero que hay)
+			minimo = numero;
+			esPrimeraIteracion = false;
+		}
+		else //segunda,3ra,4ta etc etc - iteracion
+		{
+			if(numero > maximo) // el segundo numero que ingreso es mayor al numero maximo ya establecido.
+			{
+				maximo = numero;
+			}
+			
+			if(numero < minimo)
+			{
+				minimo = numero;
+			}
+		}
+		respuesta = confirm("desea continuar?");
+
+	}while(respuesta);
+
+	/*document.getElementById('maximo').value = maximo;
+	document.getElementById('minimo').value = minimo;*/
+
+	document.write("Maximo =" + maximo + "<br>");
+	document.write("Minimo =" + minimo + "<br>");
+
+
+}//FIN DE LA FUNCIÓN
+
+/*
+-----------------------------------------------------------------------------------
+//UNA POSIBILIDAD ES ESTA.
+var respuesta='si';
+	var numero;
+	var maximo;
+	var minimo;
+	var esPrimeraIteracion = true;
+
+	do
+	{
+		numero = prompt("ingrese un numero");
+		while(isNaN(numero) || parseInt(numero) < -10 || parseInt(numero) > 10) // si el IsNan(numero) es una letra es VERDADERO y entra al bucle while (ERROR. Debe ingresar un numero entre -10 y 10.)
+		{
+			numero = prompt("ERROR. Debe ingresar un numero entre -10 y 10");
+		}
+		numero = parseInt(numero);
+
+		if(esPrimeraIteracion === true)
+		{
+			maximo = numero; //la primera vez es el maximo y el minimo. (porque es el unico numero que hay)
+			minimo = numero;
+			esPrimeraIteracion = false;
+		}
+		else //segunda,3ra,4ta etc etc - iteracion
+		{
+			if(numero > maximo) // el segundo numero que ingreso es mayor al numero maximo ya establecido.
+			{
+				maximo = numero;
+			}
+			
+			if(numero < minimo)
+			{
+				minimo = numero;
+			}
+		}
+		respuesta = confirm("desea continuar?");
+
+	}while(respuesta);
+
+	//document.getElementById('maximo').value = maximo;
+	//document.getElementById('minimo').value = minimo;
+
+	document.write("Maximo =" + maximo + "<br>");
+	document.write("Minimo =" + minimo + "<br>");
+*/
+
+
+/*
+-----------------------------------------------------------------------------------
+var respuesta='si';
+	var numero;
+	var maximo;
+	var minimo;
+	var esPrimeraIteracion = true;
+
+	while(respuesta!='no')
+	{
+		numero = prompt("ingrese un numero");
+		while(isNaN(numero))
+		{
+			numero = prompt("ERROR, ingresa un numero, no una letra");
+			numero = parseInt(numero);
+		}
+		numero = parseInt(numero);
+
+		if(esPrimeraIteracion === true)
+		{
+			maximo = numero; //la primera vez es el maximo y el minimo. (porque es el unico numero que hay)
+			minimo = numero;
+			esPrimeraIteracion = false;
+		}
+		else //segunda,3ra,4ta etc etc - iteracion
+		{
+			if(numero > maximo) // el segundo numero que ingreso es mayor al numero maximo ya establecido.
+			{
+				maximo = numero;
+			}
+			
+			if(numero < minimo)
+			{
+				minimo = numero;
+			}
+		}
+		respuesta = prompt('ingrese "no" para finalizar')
+	}
+
+	document.getElementById('maximo').value = maximo;
+	document.getElementById('minimo').value = minimo;
+*/
+
+
+/*
+----------------------------------------------------------------------------------
+	//FUNCIONA PERO NO TERMINO DE ENTENDERLO!!!
 
 	var contador=0;
 	// declarar variables
@@ -48,8 +192,6 @@ document.getElementById('minimo').value = minimo;
 document.write('1)numero maximo: ' + maximo + '<br>');
 document.write('2)numero minimo: ' + minimo + '<br>');
 */
-
-}//FIN DE LA FUNCIÓN
 
 
 
